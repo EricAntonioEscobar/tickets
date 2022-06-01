@@ -18,6 +18,7 @@
        @enderror
 
        <button type="submit" class="rounded-md bg-blue-900 w-full text-lg text-white font-semibold p-2 my-3 hover:bg-indigo-600 ">Ingresar</button>
+       <a href="{{ route('reset.pass') }}">Olvide mi contraseña</a>
     </form>
 </div>
 

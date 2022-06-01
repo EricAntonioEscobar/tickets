@@ -7,6 +7,7 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\SuperAdminController;
 use App\Http\Controllers\TiController;
+use App\Http\Controllers\ResetPassController;
 use App\Mail\CorreosMasivosMailable;
 use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Mail;
@@ -46,5 +47,11 @@ Route::get('/admin',[AdminController::class, 'index'])->middleware('auth.admin')
 Route::get('/SuperAdmin',[SuperAdminController::class, 'index'])->middleware('auth.SuperAdmin')->name('super_administrador.index');
 
 Route::get('/correo',[CorreosController::class, 'store'])->name('correo.index');
+
+
+//Reset password
+Route::get('/reset', [ResetPassController::class, 'index'])->name('reset.pass');
+Route::post('/send', [ResetPassController::class, 'send'])->name('send.email');
+
 
 
