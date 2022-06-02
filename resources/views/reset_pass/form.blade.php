@@ -3,13 +3,14 @@
 @section('title', 'Reset password')
 
 @section('content')
+@if (session('alert2'))
+<div class="alert bg-red-700 border-teal-500 rounded-b text-white text-teal-900 px-4 py-3 shadow-md" role="alert">
+        {{ session('alert2') }}
+</div>
+@endif
 
 <div style="margin-top: 100px" class="block mx-auto my-12 p-8 bg-white max-w-md border-gray-200 rounded-lg shadow-lg">
-    @if(session()->has('alert'))
-    <div style="margin-top: -35px" class="text-center text-danger mb-2">
-        {{ session()->get('alert') }}
-    </div>
-  @endif
+
 <form class="w-full max-w-sm" action="{{ route('send.email') }}" method="post">
     @csrf
     <div class="md:flex md:items-center mb-6">

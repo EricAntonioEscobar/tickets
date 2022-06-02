@@ -2,6 +2,8 @@
 
 namespace App\Mail;
 
+use App\Models\User;
+use GuzzleHttp\Psr7\Request;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
@@ -12,15 +14,16 @@ class CorreosMasivosMailable extends Mailable
     use Queueable, SerializesModels;
 
     public $subject = "Informacion de contacto";
+    public $user;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($user)
     {
-        //
+        $this->user = $user;
     }
 
     /**
@@ -30,6 +33,7 @@ class CorreosMasivosMailable extends Mailable
      */
     public function build()
     {
+
         return $this->view('emails.contactanos');
     }
 }

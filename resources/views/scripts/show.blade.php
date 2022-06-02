@@ -67,7 +67,7 @@
 
     setTimeout(function() {
         $(".alert").alert('close');
-    }, 4000);
+    }, 3000);
 
     const Prestamos = () => {
         document.getElementById("table_prestamos").style.display="block"

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\CorreosMasivosMailable;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class ResetPassController extends Controller
 {
@@ -18,11 +20,21 @@ class ResetPassController extends Controller
     }
 
     public function send(Request $request){
-      $correo = User::select('email')->where('email',$request->email)->count();
-      if($correo >= 1){
-        return "mensaje enviado";
+      $correo_count = User::select('email')->where('email',$request->email)->count();
+      if($correo_count >= 1){
+
+            $user = User::where('email',$request->email)->first();
+
+            $correo = new CorreosMasivosMailable($user->email);
+
+            Mail::to($user)->send($correo);
+            
+          if($correo){
+             return redirect()->route('login.index')->with('alert','Correo enviado con exito');
+          }
+          
       }else{
-        return back()->with('alert', 'El correo electronico no se encuentra registrado'); 
+        return back()->with('alert2', 'El correo electronico no se encuentra registrado'); 
       }
     }
 
@@ -31,10 +43,7 @@ class ResetPassController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -42,10 +51,6 @@ class ResetPassController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
-    {
-        //
-    }
 
     /**
      * Display the specified resource.
@@ -53,9 +58,10 @@ class ResetPassController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request)
     {
-        //
+        $correo = $request->email;
+        return view('emails.form', compact('correo'));
     }
 
     /**
@@ -63,22 +69,19 @@ class ResetPassController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
      *
+     * 
      * @param  \Illuminate\Http\Request  $request
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request)
     {
-        //
+        $user = User::where('email',$request->email)->first();
+
+        $user->email = $request->email;
+        $user->save();
+        return redirect()->route('login.index');
     }
 
     /**
@@ -87,8 +90,5 @@ class ResetPassController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
+
 }
