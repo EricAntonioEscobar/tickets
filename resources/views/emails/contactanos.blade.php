@@ -12,12 +12,13 @@
 <body>
     <div class="container">
         <div style="font-family: Arial, Helvetica, sans-serif">
-                <form action="{{route('new.password')}}" method="post" id="myForm">
+                {{-- <form action="{{route('new.password')}}" method="post" id="myForm"> --}}
                     @csrf
                     <h2>Da clic en el siguiente boton para restablecer tu contraseña</h2>
-                    <input type="hidden" name="email" value="{{ $user }}">
-                    <a href="{{route('update.password')}}" onclick="document.getElementById('myform').submit()">Cambiar contraseña</a>
-                </form>
+                    <input type="hidden" name="user" value="{{ $user }}">
+                    {{-- <a href="{{route('update.password')}}" onclick="document.getElementById('myform').submit()">Cambiar contraseña</a> --}}
+                    <a href="{{route('new.password',$user)}}">prueba</a>
+               {{--  </form> --}}
         </div>
 
     </div>

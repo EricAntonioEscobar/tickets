@@ -4,7 +4,7 @@
 
 @section('content')
 
-<section style="margin-top:30px; margin-left:100px;">
+<section style="margin-top:50px; margin-left:100px;">
    <div id="container-btns" style="display: none">
          <div class="d-flex justify-content-rigth table">
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
@@ -267,7 +267,7 @@
 </div>
 </section>
 
-<section id="form_cargar" style="display: none; margin-top:40px;">
+<section id="form_cargar" style="display: none; margin-top:50px;">
     <div class="container">
       <div class="d-flex justify-content-center">
 

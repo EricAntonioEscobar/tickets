@@ -52,7 +52,7 @@ Route::get('/correo',[CorreosController::class, 'store'])->name('correo.index');
 //Reset password
 Route::get('/reset', [ResetPassController::class, 'index'])->name('reset.pass');
 Route::post('/send', [ResetPassController::class, 'send'])->name('send.email');
-Route::post('/new/password/', [ResetPassController::class, 'show'])->name('new.password');
+Route::get('/new/password/{user}', [ResetPassController::class, 'show'])->name('new.password');
 Route::post('/update/password', [ResetPassController::class, 'update'])->name('update.password');
 
 

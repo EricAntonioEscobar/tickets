@@ -17,7 +17,7 @@
 
 @if (session('alert'))
 <div class="alert bg-green-400 border-teal-500 rounded-b text-white text-teal-900 px-4 py-3 shadow-md" role="alert">
-        {{ session('alert') }}
+    {{ session('alert') }}
 </div>
 @endif
 

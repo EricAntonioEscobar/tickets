@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
 
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <title>@yield('title')</title>
     @include('scripts.show')

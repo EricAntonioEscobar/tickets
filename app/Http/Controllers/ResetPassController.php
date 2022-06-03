@@ -58,10 +58,9 @@ class ResetPassController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Request $request)
+    public function show($user)
     {
-        $correo = $request->email;
-        return view('emails.form', compact('correo'));
+        return view('emails.form', compact('user'));
     }
 
     /**
@@ -77,11 +76,19 @@ class ResetPassController extends Controller
      */
     public function update(Request $request)
     {
-        $user = User::where('email',$request->email)->first();
+      if($request->password == $request->password2){
 
-        $user->email = $request->email;
+        $user = User::where('email',$request->user)->first();
+
+        $user->password = $request->password;
         $user->save();
-        return redirect()->route('login.index');
+        return redirect()->route('login.index')->with('alert', 'Contraeña modificada'); 
+
+      }else{
+        return back()->with('alert2', 'La contraseñas deben ser iguales'); 
+      }
+
+        
     }
 
     /**

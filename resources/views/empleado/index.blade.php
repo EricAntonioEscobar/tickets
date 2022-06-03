@@ -4,7 +4,7 @@
 
 @section('content')
 
-<section class="perfil_id" id="perfil_id" style="background-color: #f8f9fa;">
+<section class="perfil_id" id="perfil_id">
     <div class="container py-5 h-100">
       <div class="row d-flex justify-content-center align-items-center h-100">
         <div class="col col-lg-6 mb-4 mb-lg-0">
