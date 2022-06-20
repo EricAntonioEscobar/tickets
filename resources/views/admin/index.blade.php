@@ -5,7 +5,7 @@
 @section('content')
 
 <section style="margin-top:50px; margin-left:100px;">
-   <div id="container-btns" style="display: none">
+   <div id="container-btns">
          <div class="d-flex justify-content-rigth table">
             <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
                 <div class="btn-group mr-2" role="group" aria-label="First group">
@@ -23,7 +23,7 @@
  </div>
 </section>
 
-<section id="table_inventario" style="margin-top:10px; display:none;">
+<section id="table_inventario" style="margin-top:10px;">
     <div id="container-table">
       <div class="d-flex justify-content-center table">
         <div class="table-responsive" style="width: 90%">
@@ -265,38 +265,6 @@
         </div>   
     </div>     
 </div>
-</section>
-
-<section id="form_cargar" style="display: none; margin-top:50px;">
-    <div class="container">
-      <div class="d-flex justify-content-center">
-
-          <form class="w-100">
-              <div class="form-group">
-                <label for="exampleFormControlInput1">Codigo de producto</label>
-                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Escribe el codigo del producto">
-              </div>
-              <div class="form-group">
-                <label for="exampleFormControlSelect1">Marca</label>
-                <select class="form-control" id="exampleFormControlSelect1">
-                  <option disabled selected value> -- Selecciona una opción modelo -- </option>
-                  <option>Mac</option>
-                  <option>Asus</option>
-                  <option>Iphone</option>
-                  <option>Xiaomi</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1">Nombre</label>
-                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Escribe el nombre del producto">
-              </div>
-          <div class="d-grid gap-2 col-6 mx-auto">
-              <button class="btn btn-primary btn-lg btn-block">Registrar</button>
-          </div>
-            </form>
-          
-      </div>
-    </div>
 </section>
 
 @endsection

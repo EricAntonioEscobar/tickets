@@ -28,6 +28,8 @@ Route::get('/', function () {
     return view('home');
 })->middleware('auth')->name('home');
 
+
+////////////////////////////////////////////       SESIÓN  ///////////////////////////////////////////////////////////////////
 Route::get('/login', [SessionsController::class, 'create'])->middleware('guest')->name('login.index');
 
 Route::post('/login', [SessionsController::class, 'store'])->name('login.store');
@@ -38,18 +40,32 @@ Route::post('/register', [RegisterController::class, 'store'])->name('register.s
 
 Route::get('/logout', [SessionsController::class, 'destroy'])->middleware('auth')->name('logout.destroy');
 
-Route::get('/ti',[TiController::class, 'index'])->middleware('auth.Ti')->name('ti.index');
+/////////////////////////////////////////       TI                 ////////////////////////////////////////////////////////////
+
+Route::get('ti/usuarios',[TiController::class, 'usuarios'])->middleware('auth.Ti')->name('ti.usuarios');
+Route::get('ti/prestamos',[TiController::class, 'prestamos'])->middleware('auth.Ti')->name('ti.prestamos');
+
+/////////////////////////////////////////       EMPLEADO                 //////////////////////////////////////////////////////
 
 Route::get('/empleado',[EmpleadoController::class, 'index'])->middleware('auth.Empleado')->name('empleado.index');
+Route::get('empleado/equipos_asignados',[EmpleadoController::class, 'equipos_asignados'])->middleware('auth.Empleado')->name('empleado.equipos_asignados');
+Route::get('empleado/solicitar_equipo',[EmpleadoController::class, 'solicitar_equipo'])->middleware('auth.Empleado')->name('empleado.solicitar_equipo');
 
-Route::get('/admin',[AdminController::class, 'index'])->middleware('auth.admin')->name('admin.index');
+/////////////////////////////////////////       ADMIN                 /////////////////////////////////////////////////////////
+
+Route::get('admin/inventario',[AdminController::class, 'index'])->middleware('auth.admin')->name('admin.index');
+Route::get('admin/agregar',[AdminController::class, 'create'])->middleware('auth.admin')->name('admin.create');
+Route::get('admin/actualizar',[AdminController::class, 'update'])->middleware('auth.admin')->name('admin.update');
+
+/////////////////////////////////////////       Super admin                 ///////////////////////////////////////////////////
 
 Route::get('/SuperAdmin',[SuperAdminController::class, 'index'])->middleware('auth.SuperAdmin')->name('super_administrador.index');
 
+
+
 Route::get('/correo',[CorreosController::class, 'store'])->name('correo.index');
 
-
-//Reset password
+///////////////////////////////////////     /Reset password        //////////////////////////////////////////////////////////////
 Route::get('/reset', [ResetPassController::class, 'index'])->name('reset.pass');
 Route::post('/send', [ResetPassController::class, 'send'])->name('send.email');
 Route::get('/new/password/{user}', [ResetPassController::class, 'show'])->name('new.password');

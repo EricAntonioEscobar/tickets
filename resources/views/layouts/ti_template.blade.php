@@ -47,10 +47,10 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
           <ul class="navbar-nav mr-0">
             <li class="nav-item">
-                <a class="nav-link text-white" onclick="Prestamos();" href="#">Prestamos</a>
+                <a class="nav-link text-white" href="{{ route('ti.prestamos') }}">Prestamos</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" onclick="Usuarios();" href="#">Usuarios</a>
+                <a class="nav-link text-white" href="{{ route('ti.usuarios') }}">Usuarios</a>
             </li>
             {{-- <li class="nav-item">
               <a class="nav-link text-white" onclick="EquiposAsignados();" href="#">Equipos asignados</a>

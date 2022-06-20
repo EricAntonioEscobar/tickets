@@ -1,38 +1,4 @@
 <script>
-
-
-    const DatosPersonales = () => {
-        document.getElementById("perfil_id").style.display="block";
-        document.getElementById("perfil_id").classList.add("inventario_carga");
-        document.getElementById("table_equipos").style.display="none";
-        document.getElementById("form_solicitar").style.display="none";
-    }
-
-    const EquiposAsignados = () => {
-        document.getElementById("perfil_id").style.display="none";
-        document.getElementById("table_equipos").style.display="block";
-        document.getElementById("table_equipos").classList.add("inventario_carga");
-        document.getElementById("form_solicitar").style.display="none";
-    }
-
-    const SolicitarEquipo = () => {
-        document.getElementById("perfil_id").style.display="none";
-        document.getElementById("table_equipos").style.display="none";
-        document.getElementById("form_solicitar").style.display="block"
-        document.getElementById("form_solicitar").classList.add("inventario_carga");
-    }
-
-    const Inventario = () => {
-        document.getElementById("table_inventario").style.display="block"
-        document.getElementById("table_inventario").classList.add("inventario_carga");
-        document.getElementById("container-btns").style.display="block"
-        document.getElementById("table_celulares").style.display="none"
-        document.getElementById("table_compus").style.display="none"
-        document.getElementById("table_otros").style.display="none"
-        document.getElementById("form_cargar").style.display="none"
-        
-    }
-
     const Celulares = () => {
         document.getElementById("table_inventario").style.display="none"
         document.getElementById("container-btns").style.display="block"
@@ -60,34 +26,8 @@
         document.getElementById("table_otros").classList.add("animate");
     }
 
-    const CargarEquipo = () => {
-        document.getElementById("table_inventario").style.display="none"
-        document.getElementById("container-btns").style.display="none"
-        document.getElementById("table_celulares").style.display="none"
-        document.getElementById("table_compus").style.display="none"
-        document.getElementById("table_otros").style.display="none"
-        document.getElementById("form_cargar").style.display="block"
-        document.getElementById("form_cargar").classList.add("inventario_carga");
-    }
-
-    const RegistrarUsuarioCargarEquipo = () => {
-        document.getElementById("form_registrar_usuario").style.display="block"
-    }
-
     setTimeout(function() {
         $(".alert").alert('close');
     }, 3000);
-
-    const Prestamos = () => {
-        document.getElementById("table_prestamos").style.display="block"
-        document.getElementById("table_prestamos").classList.add("inventario_carga");
-        document.getElementById("table_usuarios").style.display="none"
-    }
-
-    const Usuarios = () => {
-        document.getElementById("table_prestamos").style.display="none"
-        document.getElementById("table_usuarios").style.display="block"
-        document.getElementById("table_usuarios").classList.add("inventario_carga");
-    }
 
 </script>

@@ -4,9 +4,8 @@
 
 @section('content')
 
-<section id="form_registrar_usuario" style="margin-top: 30px">
     <div class="container">
-      <div class="d-flex justify-content-center">
+      <div class="d-flex justify-content-center" style="margin-top: 30px">
 
           <form class="w-100">
               <label class="font-weight-bold" for="exampleFormControlInput1">Nombre</label>
@@ -46,6 +45,5 @@
           
       </div>
     </div>
-</section>
 
 @endsection

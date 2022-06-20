@@ -47,10 +47,10 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
           <ul class="navbar-nav mr-0">
             <li class="nav-item">
-                <a class="nav-link text-white" onclick="CargarEquipo();" href="#">Cargar Equipo</a>
+                <a class="nav-link text-white" href="{{ route('admin.create') }}">Cargar Equipo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" onclick="Inventario();" href="#">Inventario</a>
+              <a class="nav-link text-white" href="{{ route('admin.index') }}">Inventario</a>
             </li>
             {{-- <li class="nav-item">
               <a class="nav-link text-white" onclick="EquiposAsignados();" href="#">Equipos asignados</a>

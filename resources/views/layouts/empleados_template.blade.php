@@ -38,13 +38,13 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
           <ul class="navbar-nav mr-0">
             <li class="nav-item">
-              <a class="nav-link text-white" onclick="SolicitarEquipo();" href="#">Solicitar equipo</a>
+              <a class="nav-link text-white" href="{{ route('empleado.solicitar_equipo') }}">Solicitar equipo</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-white" onclick="EquiposAsignados();" href="#">Equipos asignados</a>
+              <a class="nav-link text-white" href="{{ route('empleado.equipos_asignados') }}">Equipos asignados</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" onclick="DatosPersonales();" href="#">Datos personales</a>
+                <a class="nav-link text-white" href="{{ route('empleado.index') }}">Datos personales</a>
               </li>
             <li class="nav-item">
                 <a class="btn btn-danger a_prueba" href="{{route('logout.destroy')}}">Cerrar Sesión</a>

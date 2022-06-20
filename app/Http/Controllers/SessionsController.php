@@ -24,7 +24,7 @@ class SessionsController extends Controller
                 return redirect()->route('super_administrador.index');
             }
             if(auth()->user()->role == 'ti'){
-                return redirect()->route('ti.index');
+                return redirect()->route('ti.usuarios');
             }
         }
         

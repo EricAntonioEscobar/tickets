@@ -6,7 +6,11 @@ use Illuminate\Http\Request;
 
 class TiController extends Controller
 {
-    public function index(){
-        return view('ti.index');
+    public function usuarios(){
+        return view('ti.usuarios');
+    }
+
+    public function prestamos(){
+        return view('ti.prestamos');
     }
 }

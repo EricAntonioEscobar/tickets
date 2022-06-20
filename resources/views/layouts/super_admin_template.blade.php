@@ -36,10 +36,7 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
           <ul class="navbar-nav mr-0">
             <li class="nav-item">
-                <a class="nav-link text-white" onclick="RegistrarUsuario();" href="#">Registrar usuario</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white" href="{{route('correo.index')}}">Enviar correo</a>
+                <a class="nav-link text-white" href="{{ route('super_administrador.index') }}">Registrar usuario</a>
             </li>
             {{-- <li class="nav-item">
               <a class="nav-link text-white" onclick="EquiposAsignados();" href="#">Equipos asignados</a>
